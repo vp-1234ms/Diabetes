@@ -1,164 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report</title>
+    <title>Diabetes Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            background-color: #f4f7fa;
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #4a4a4a;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border 0.3s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+            background-color: #004494;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group:last-of-type {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
-
-<style>
-
-  body,
-  html {
-    background-color: #ebecf0;
-  }
-  
-  body,
-  p,
-  input,
-  select,
-  textarea,
-  button {
-    font-family: "Montserrat", sans-serif;
-    letter-spacing: -0.2px;
-    font-size: 16px;
-  }
-  
-  div,
-  p {
-    color: #babecc;
-    text-shadow: 1px 1px 1px #fff;
-  }
-  
-  form {
-    padding: 16px;
-    width: 250px;
-    margin: 0 auto;
-  }
-  
-  .segment {
-    padding: 32px 0;
-    text-align: center;
-    color: black;
-  }
-  
-  button,
-  input {
-    border: 0;
-    outline: 0;
-    font-size: 16px;
-    border-radius: 320px;
-    padding: 16px;
-    background-color: #ebecf0;
-    text-shadow: 1px 1px 0 #fff;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 24px;
-    width: 100%;
-  }
-  
-  input {
-    margin-right: 8px;
-    box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.2s ease-in-out;
-    appearance: none;
-    -webkit-appearance: none;
-  }
-  input:focus {
-    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
-  }
-  
-  button {
-    color: #61677c;
-    font-weight: bold;
-    box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  button:hover {
-    box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
-  }
-  button:active {
-    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
-  }
-  button .icon {
-    margin-right: 8px;
-  }
-  button.unit {
-    border-radius: 8px;
-    line-height: 0;
-    width: 48px;
-    height: 48px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 8px;
-    font-size: 19.2px;
-  }
-  button.unit .icon {
-    margin-right: 0;
-  }
-  button.red {
-    display: block;
-    width: 100%;
-    color: #ae1100;
-  }
-  
-  .input-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .input-group label {
-    margin: 0;
-    flex: 1;
-  }
-
-</style>
-
 <body>
-  
-  
-        <div class="segment">
-          <h1>Diabetes Test</h1>
-        </div>
-    <form method="POST" action="/predictdata"> 
-        <label>
-          <input type="text" name="Pregnancies" placeholder="Pregnancies" required="required"/>
-        </label>
-        <label>
-          <input type="text" name="Glucose" placeholder="Glucose" required="required"/>
-        </label>
-        <label>
-          <input type="text" name="BloodPressure" placeholder="BloodPressure" required="required"/>
-        </label>
-        <label>
-          <input type="text" name="SkinThickness" placeholder="SkinThickness" required="required"/>
-        </label>
-        <label>
-          <input type="text" name="Insulin" placeholder="Insulin" required="required"/>
-        </label>
-        <label>
-          <input type="text" name="BMI" placeholder="BMI" required="required"/>
-        </label>
-        <label>
-          <input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="required"/>
-        </label>
-        <label>
-          <input type="text" name="Age" placeholder="Age" required="required"/>
-        </label>
 
-        <button class="red" type="submit"><i class="icon ion-md-lock"></i>Submit</button>
-      
-        
-      </form>
+<div class="container">
+    <h1>Diabetes Test</h1>
+    <form method="POST" action="/predictdata"> 
+        <div class="input-group">
+            <label for="Pregnancies">Pregnancies</label>
+            <input type="text" id="Pregnancies" name="Pregnancies" placeholder="Enter number of pregnancies" required />
+        </div>
+        <div class="input-group">
+            <label for="Glucose">Glucose</label>
+            <input type="text" id="Glucose" name="Glucose" placeholder="Enter glucose level" required />
+        </div>
+        <div class="input-group">
+            <label for="BloodPressure">Blood Pressure</label>
+            <input type="text" id="BloodPressure" name="BloodPressure" placeholder="Enter blood pressure" required />
+        </div>
+        <div class="input-group">
+            <label for="SkinThickness">Skin Thickness</label>
+            <input type="text" id="SkinThickness" name="SkinThickness" placeholder="Enter skin thickness" required />
+        </div>
+        <div class="input-group">
+            <label for="Insulin">Insulin</label>
+            <input type="text" id="Insulin" name="Insulin" placeholder="Enter insulin level" required />
+        </div>
+        <div class="input-group">
+            <label for="BMI">BMI</label>
+            <input type="text" id="BMI" name="BMI" placeholder="Enter BMI" required />
+        </div>
+        <div class="input-group">
+            <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
+            <input type="text" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" placeholder="Enter diabetes pedigree function" required />
+        </div>
+        <div class="input-group">
+            <label for="Age">Age</label>
+            <input type="text" id="Age" name="Age" placeholder="Enter age" required />
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
 </body>
 </html>
-
