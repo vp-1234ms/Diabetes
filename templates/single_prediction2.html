@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-.center {
-  margin: auto;
-  width: 30%;
-  border: 10px solid black;
-  position: absolute;
-  top: 35%;
-  left: 35%;
-  text-align:center;
-  color: green;
-  font-size: 30px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Page 2</title>
+    <style>
+        body {
+            background-color: #f4f7fa;
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-container {
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            border: 2px solid #28a745; /* Bootstrap's success color */
+            border-radius: 10px;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-container p {
+            color: #28a745; /* Bootstrap's success color */
+            font-size: 24px;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
-
-<div class="center">
-  <p>{{result}}</p>
+<div class="result-container">
+    <p>{{result}}</p>
 </div>
 
 </body>
