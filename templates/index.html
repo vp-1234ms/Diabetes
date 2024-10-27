@@ -97,35 +97,35 @@
     <form method="POST" action="/predictdata"> 
         <div class="input-group">
             <label for="Pregnancies">Pregnancies</label>
-            <input type="text" id="Pregnancies" name="Pregnancies" placeholder="Enter number of pregnancies" required />
+            <input type="number" id="Pregnancies" name="Pregnancies" placeholder="Enter number of pregnancies" required step="1" min="0"/>
         </div>
         <div class="input-group">
             <label for="Glucose">Glucose</label>
-            <input type="text" id="Glucose" name="Glucose" placeholder="Enter glucose level" required />
+            <input type="number" id="Glucose" name="Glucose" placeholder="Enter glucose level" required step="any" min="0"/>
         </div>
         <div class="input-group">
             <label for="BloodPressure">Blood Pressure</label>
-            <input type="text" id="BloodPressure" name="BloodPressure" placeholder="Enter blood pressure" required />
+            <input type="number" id="BloodPressure" name="BloodPressure" placeholder="Enter blood pressure" required step="any" min="0"/>
         </div>
         <div class="input-group">
             <label for="SkinThickness">Skin Thickness</label>
-            <input type="text" id="SkinThickness" name="SkinThickness" placeholder="Enter skin thickness" required />
+            <input type="number" id="SkinThickness" name="SkinThickness" placeholder="Enter skin thickness" required step="any" min="0"/>
         </div>
         <div class="input-group">
             <label for="Insulin">Insulin</label>
-            <input type="text" id="Insulin" name="Insulin" placeholder="Enter insulin level" required />
+            <input type="number" id="Insulin" name="Insulin" placeholder="Enter insulin level" required step="any" min="0"/>
         </div>
         <div class="input-group">
             <label for="BMI">BMI</label>
-            <input type="text" id="BMI" name="BMI" placeholder="Enter BMI" required />
+            <input type="number" id="BMI" name="BMI" placeholder="Enter BMI" required step="any" min="0"/>
         </div>
         <div class="input-group">
             <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
-            <input type="text" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" placeholder="Enter diabetes pedigree function" required />
+            <input type="number" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" placeholder="Enter diabetes pedigree function" required step="any" min="0"/>
         </div>
         <div class="input-group">
             <label for="Age">Age</label>
-            <input type="text" id="Age" name="Age" placeholder="Enter age" required />
+            <input type="number" id="Age" name="Age" placeholder="Enter age" required step="1" min="0"/>
         </div>
 
         <button type="submit">Submit</button>
