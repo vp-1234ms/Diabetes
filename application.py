@@ -43,12 +43,11 @@ def predict_datapoint():
         else:
             result ="Congrats You Don't Have Diabetes"
             return render_template('single_prediction2.html',result=result)
-            
-        
 
     else:
         return render_template('home.html')
 
 
-if __name__=="__main__":
-    app.run(host="0.0.0.0")
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=4000, debug=False)
